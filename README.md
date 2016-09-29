@@ -2,9 +2,10 @@
 This application demonstrates how to use the Workload Scheduler service, with the 'Liberty for Java™' runtime and Cloudant No-SQL database on IBM Cloud.
 
 ## Table of contents
-[Files](#files)
-[Build](#build)
-[Deploy](#deploy)
+[Files](#files)  
+[Build](#build)  
+[Deploy](#deploy)  
+[Usage](#usage)  
 
 ## Files
 The Java Workload Scheduler Web Starter application contains the following contents:
@@ -54,3 +55,31 @@ cd target
    ```
    cf push <YourAppName> -p javaCloudantWorkloadSchedulerApp.war
    ```
+
+## Setup
+If you wish to receive an email confirmation of every order done with the app, you'll need a unix/linux machine connected to the internet, with the "mailx" command installed and configured.  
+- Click on the "Workload Scheduler" section, under _Services_
+- Click on "Downloads"
+- Download the agent for your linux architecture on your linux machine
+- Unzip the agent:  
+```
+unzip /tmp/SCWA-SaaS_LINUX_X86_64.zip
+```
+- Move to the new folder  
+```
+cd SCWA-SaaS/
+```
+- Create an user for the agent  
+```
+useradd -m iws
+```
+- Install the agent using the command  
+```
+./installAgent.sh -new -acceptlicense yes -uname iws -displayname hybrid
+```
+- Wait for the Application Lab to discover the newly installed agent.
+
+## Usage
+Once the deployed app is online, go to its link and select same beers, then click on the _Checkout_ button. During the waiting time, what happens under the curtains is:
+- The app creates a document with the order informations in a database called "orders", using the official Cloudant Java Library.
+- 
