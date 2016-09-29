@@ -80,6 +80,5 @@ useradd -m iws
 - Wait for the Application Lab to discover the newly installed agent.
 
 ## Usage
-Once the deployed app is online, go to its link and select same beers, then click on the _Checkout_ button. During the waiting time, what happens under the curtains is:  
+Once the deployed app is online, go to its link and select same beers, then click on the _Checkout_ button. During the waiting time, what happens under the curtains is:
 - The app creates a document with the order informations in a database called "orders", using the official Cloudant Java Library.
-- 
