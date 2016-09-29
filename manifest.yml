@@ -1,0 +1,11 @@
+applications:
+- path: javaCloudantWorkloadSchedulerApp.war
+  memory: 512M
+  instances: 1
+  domain: stage1.mybluemix.net
+  name: iws-cloudant
+  host: iws-cloudant
+  disk_quota: 1024M
+  services:
+  - iws-cloudant-cloudantNoSQLDB
+  - iws-cloudant-WorkloadScheduler

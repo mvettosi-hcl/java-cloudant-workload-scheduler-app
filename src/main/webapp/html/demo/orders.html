@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Orders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+</style>
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $.get("/Orders", function(data) {
+            if( data ) {
+                for( var i=0; i<data.length; i++ ) {
+                    var order = data[i];
+                    var table = order.status == "S" ? "incoming" :"processed";
+                    var row = [];
+                    
+                    row.push( order.id );
+                    row.push( order.date );
+                    row.push( order.num_items );
+                    row.push( "$"+order.amount );
+                    row.push( order.desc );
+                     
+                    $("#"+table).append( "<tr><td>" + row.join("</td><td>") + "</td></tr>" );                    
+                }
+            }
+        });
+    });
+</script>
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="../assets/ico/favicon.png">
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top"></div>
+
+    <div class="container">
+        <h1>Ye olde TWS shoppe - Current orders</h1>
+
+        <!-- Example row of columns -->
+        <div class="row">
+
+            <div class="span12">
+                <h2>Incoming</h2>
+                <table id="incoming" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Order no.</th>
+                            <th>Date</th>
+                            <th>Num items</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="span12">
+                <h2>Processed</h2>
+                <table id="processed" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Order no.</th>
+                            <th>Date</th>
+                            <th>Num items</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+
+            <footer>
+                <p>&copy; TWS 2013</p>
+            </footer>
+
+        </div>
+    </div> <!-- /container -->
+</body>
+</html>
