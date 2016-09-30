@@ -23,7 +23,7 @@ The Java Workload Scheduler Web Starter application contains the following conte
 ## Build
 This is how to compile the app and manually generate a deployable artifact. If you just wish to try it using the precompiled war, skip to the [Deploy](#deploy) section.
 
-- Make sure to have an installed and working instance of Apache Maven, using Java 1.7 or above. Also you'll need git.
+- Make sure to have an installed and working instance of Apache Maven, using Java 1.7 or above. You'll also need git.
 - Clone this project:  
 ```
 git clone https://github.com/MatteoVettosiHCL/java-cloudant-workload-scheduler-app.git
