@@ -1,4 +1,4 @@
-#Java Workload Scheduler Web Starter - Beer Shop App
+# BeerShop - Java Workload Scheduler Web Starter
 This application demonstrates how to use the Workload Scheduler service, with the 'Liberty for Java™' runtime and Cloudant No-SQL database on IBM Cloud.
 
 ## Table of contents
