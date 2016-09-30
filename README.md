@@ -89,4 +89,4 @@ Once the deployed app is online, go to its link and select same beers, then clic
 - Using the official Cloudant Java Library, the app creates a document with the order informations in a database called _orders_.
 - With the help of the Java Application Lab library, it creates (if it does not exist) a _Library_ and a _Process_ inside it
   - If the _FROM_ and _TO_ environment variables are defined, a step using the hybrid agent will be created to send a notification with the order informations
-- It runs the _Process_ asynchronously which takes an order in the database, processes it and deletes the corrisponding document.
+- It runs the _OrderProcess_ asynchronously which takes an order in the database, processes it and deletes the corrisponding document.
