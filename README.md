@@ -46,7 +46,7 @@ You'll find the deployable war _javaCloudantWorkloadSchedulerApp.war_ under the 
 This is how to see the application in action on the Bluemix environment.
 
 - Create a new app using the [Java Workload Scheduler Web Starter](https://console.eu-gb.bluemix.net/catalog/starters/java-workload-scheduler-web-starter/) boilerplate.
-- If you decided to build the application manually, change to the _target_ directory  
+- Download the precompiled _javaCloudantWorkloadSchedulerApp.war_ from this repo or, if you decided to build the application manually, change to the _target_ directory  
 ```
 cd target
 ```
