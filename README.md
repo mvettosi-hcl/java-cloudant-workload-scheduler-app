@@ -58,7 +58,7 @@ cd target
    ```
 
 ## Setup
-If you wish to receive an email confirmation of every order processed by the app, you'll need a unix/linux machine connected to the internet, with the "mailx" command installed and configured.  
+If you wish to receive an email confirmation of every order processed by the app, you'll need a Unix/Linux machine connected to the internet, with the "mailx" command installed and configured.  
 - Click on the _Workload Scheduler_ section, under _Services_
 - Click on _Downloads_
 - Download the agent for your linux architecture on your linux machine
@@ -86,7 +86,7 @@ useradd -m iws
 
 ## Usage
 Once the deployed app is online, go to its link and select same beers, then click on the _Checkout_ button. During the waiting time, what happens under the curtains is:
-- Using the official Cloudant Java Library, the app creates a document with the order informations in a database called "orders".
+- Using the official Cloudant Java Library, the app creates a document with the order informations in a database called _orders_.
 - With the help of the Java Application Lab library, it creates (if it does not exist) a _Library_ and a _Process_ inside it
   - If the _FROM_ and _TO_ environment variables are defined, a step using the hybrid agent will be created to send a notification with the order informations
-- It runs the _Process_ which takes an order in the database, processes it and deletes the corrisponding document.
+- It runs the _Process_ asynchronously which takes an order in the database, processes it and deletes the corrisponding document.
